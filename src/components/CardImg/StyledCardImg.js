@@ -6,4 +6,4 @@ export const CardImg = styled.img`
   display: block;
   position: relative;
   border-radius: 8px;
-`
+`;
