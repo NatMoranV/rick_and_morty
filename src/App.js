@@ -1,19 +1,18 @@
-import './App.css';
-import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import {Characters } from './data';
+import "./App.css";
+import CardsGrid from "./components/CardsGrid/CardsGrid";
+import { Characters } from "./data";
+import videoBg from "./assets/video/videoBg.mp4";
 
 function App() {
-   return (
-      <div className='App'>
-         <SearchBar onSearch={(characterID) => window.alert(characterID)} />
+  return (
+    <div className="App">
+      <video src={videoBg} autoPlay muted loop />
+      <h1>Rick and Morty</h1>
+      {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
 
-         <Cards 
-            characters = {Characters}
-         />
-      </div>
-   );
+      <CardsGrid characters={Characters} />
+    </div>
+  );
 }
 
 export default App;
