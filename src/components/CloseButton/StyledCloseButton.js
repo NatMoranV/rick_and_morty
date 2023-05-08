@@ -10,4 +10,5 @@ export const CloseButton = styled.div`
   z-index: 2;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow: 0 0 15px 2px red
 `;

@@ -1,6 +1,5 @@
 import { CardContainer } from "../CardContainer/StyledCardContainer";
 import { CardImg } from "../CardImg/StyledCardImg";
-import { BgButton } from "../CloseButton/StyledBgButton";
 import { CloseButton } from "../CloseButton/StyledCloseButton";
 
 export default function Card(props) {
@@ -18,7 +17,6 @@ export default function Card(props) {
           {props.origin.name}
         </a>{" "}
       </span>
-      <BgButton />
     </CardContainer>
   );
 }
