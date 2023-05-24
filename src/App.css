@@ -1,7 +1,14 @@
+picture{
+  display: flex;
+  width: 10%;
+  min-width: 40px;
+}
+
 #logo{
-    display: block;
-    width: 14em;
+    width: 100%;
+    min-width: 40px;
     
+
 }
 
 input::-webkit-outer-spin-button,
