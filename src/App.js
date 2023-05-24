@@ -1,15 +1,38 @@
 import "./App.css";
 import CardsGrid from "./components/CardsGrid/CardsGrid";
-import { Characters } from "./data";
-import logo from './assets/img/logo.png'
+import { useState } from "react";
+import axios from "axios";
+import Nav from "./components/Nav/Nav";
+
+
 
 function App() {
+const [characters, setCharacters] = useState([]);
+
+function onClose(id){
+  const filtrados = characters.filter(character => character.id !== parseInt(id))
+  setCharacters(filtrados)
+}
+
+function onSearch(id) {
+  axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+     if (!characters.some(character => character.id == parseInt(id))) {
+        setCharacters((oldChars) => [...oldChars, data]);
+     } else {
+        window.alert(`¡El ID ${id} ya fue solicitado, recuerda que no puedes agregar repetidos!`);
+     }
+  }).catch((error) => {
+    console.error(error);
+    window.alert(`¡El ID ${id} no está disponible!`);
+  });;
+  
+}
+
+
   return (
     <div className="App">
-      <img id="logo" src={logo}/>
-      {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
-
-      <CardsGrid characters={Characters} />
+      <Nav onSearch={onSearch}/>
+      <CardsGrid onClose={onClose} characters={characters} />
     </div>
   );
 }

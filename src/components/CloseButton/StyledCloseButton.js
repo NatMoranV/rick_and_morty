@@ -1,14 +1,24 @@
 import styled from "styled-components";
 
 export const CloseButton = styled.div`
-  display: flex;
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  align-items: center;
+  justify-content: center;
   align-self: flex-end;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   background-color: red;
-  position: relative;
+  /* position: relative; */
   z-index: 2;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 15px 2px red
+ 
+  :hover{
+    transform: scale(1.1);
+}
+
 `;

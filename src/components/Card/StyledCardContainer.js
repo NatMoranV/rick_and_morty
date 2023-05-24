@@ -19,8 +19,12 @@ export const CardContainer = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
+    .closeButton{
+    display: flex;
+  }
     transform: scale(1.02);
     backdrop-filter: blur(15px);
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   }
+
 `;
