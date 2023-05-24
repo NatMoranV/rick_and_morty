@@ -18,12 +18,12 @@ function onSearch(id) {
   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
      if (!characters.some(character => character.id == parseInt(id))) {
         setCharacters((oldChars) => [...oldChars, data]);
-     } else {
+     }else {
         window.alert(`¡El ID ${id} ya fue solicitado, recuerda que no puedes agregar repetidos!`);
      }
   }).catch((error) => {
     console.error(error);
-    window.alert(`¡El ID ${id} no está disponible!`);
+    window.alert(`¡El ID ${id} no está disponible, ingresa un ID numérico entre el 1 y el 826!`);
   });;
   
 }

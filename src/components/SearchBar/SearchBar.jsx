@@ -18,6 +18,7 @@ export const SearchBar = ({ onSearch }) => {
     if (event.key === "Enter") {
       onSearch(id);
       empty.current.value = null
+      setId(null)
     }
   };
 
@@ -34,6 +35,7 @@ export const SearchBar = ({ onSearch }) => {
         onClick={() => {
           onSearch(id);
           empty.current.value = null
+          setId(null)
         }}
       >
         <span><FontAwesomeIcon icon={faPlus} /></span>
