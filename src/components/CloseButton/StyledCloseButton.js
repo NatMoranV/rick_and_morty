@@ -19,6 +19,7 @@ export const CloseButton = styled.div`
  
   :hover{
     transform: scale(1.1);
+    box-shadow:-0 0 5px 1px ${props => props.theme.light.red};
 }
 
 `;

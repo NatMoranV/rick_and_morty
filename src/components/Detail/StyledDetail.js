@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const StyledDetailContainer = styled.div`
   box-sizing: border-box;
-  width: 360px;
+  margin: auto;
+  width: 50vw;
   height: auto;
-  display: flex;
-  flex-direction: column;
+  padding: 2em;
+  display: grid;
+  gap: 5em;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
   align-items: center;
   padding: 16px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
@@ -17,7 +21,14 @@ export const CardContainer = styled.div`
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
-  text-align: center;
+
+
+  & .info{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1em;
+  }
 
   &:hover {
     .closeButton{
@@ -27,5 +38,4 @@ export const CardContainer = styled.div`
     backdrop-filter: blur(15px);
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   }
-
-`;
+`
