@@ -1,22 +1,16 @@
 import styled from "styled-components";
+import { StyledCircleButton } from "../CircleButton/StyledCircleButton";
 
-export const RandomButton = styled.button`
 
-background-color: yellow;
-width: 32px;
-height: 32px;
-border-radius: 50%;
-border: none;
-box-shadow: 0 0 15px 2px yellow;
-cursor: pointer;
+export const RandomButton = styled(StyledCircleButton)`
+
+background-color: ${props => props.theme.light.secondary};
+
 
 :hover{
-    transform: scale(1.1);
+    box-shadow: 0 0 5px 1px ${props => props.theme.light.secondary};
 }
 
 
-& path{
-    color: black;
-}
 
 `

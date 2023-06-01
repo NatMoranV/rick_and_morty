@@ -2,26 +2,26 @@ import "./App.css";
 import CardsGrid from "./components/CardsGrid/CardsGrid";
 import { useState } from "react";
 import axios from "axios";
-import Nav from "./components/Nav/Nav";
-import { Route, Routes } from "react-router-dom";
-
+import Nav from "./components/NavBar/NavBar";
+import { useLocation, Navigate, Route, Routes } from "react-router-dom";
+import { Form } from "./components/Form/Form";
 import { About } from "./components/About/About";
 import { Detail } from "./components/Detail/Detail";
 import { ThemeProvider } from "styled-components";
 
 function App() {
   const theme = {
-    dark:{
-
+    dark: {},
+    light: {
+      primary: "#10a60c",
+      secondary: "#6BDFFF",
+      third: "#559CBD",
+      extra: "#FF6314",
+      text: "#FFF",
+      red: "red",
     },
-    light:{
-      primary: '#6cbe23',
-      secundary: '#e8e488',
-      third: '#382e1b',
-      extra: '#a9d4d7',
-      red: 'red'
-    }
-  }
+  };
+
   const [characters, setCharacters] = useState([]);
 
   function onClose(id) {
@@ -52,17 +52,21 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
-      <Nav onSearch={onSearch} />
-      <Routes>
-        <Route
-          path="/home"
-          element={<CardsGrid onClose={onClose} characters={characters}/>}
-        />
-        <Route path="/about" element={<About/>} />
-        <Route path="/detail/:id" element={<Detail/>} />
-      </Routes>
-    </div>
+      <div className="App">
+ 
+          <Nav onSearch={onSearch} />
+      
+        <Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<Form />} />
+          <Route
+            path="/home"
+            element={<CardsGrid onClose={onClose} characters={characters} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+      </div>
     </ThemeProvider>
   );
 }

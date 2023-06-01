@@ -1,10 +1,10 @@
 import { CardContainer } from "./StyledCardContainer";
-import { CardImg } from "../CardImg/StyledCardImg";
 import { CloseButton } from "../CloseButton/StyledCloseButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { DetailButton } from "../DetailButton/StyledDetailButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 export default function Card({
@@ -12,23 +12,17 @@ export default function Card({
   id,
   image,
   name,
-  // status,
-  // species,
-  // gender,
-  // origin,
+
 }) {
   return (
     <CardContainer>
       <CloseButton className="closeButton" onClick={() => onClose(id)}>
         <FontAwesomeIcon icon={faXmark} />
       </CloseButton>
-      <CardImg src={image} />
+      <LazyLoadImage src={image} height={300} widht={300} effect="blur" />
       <h6>{name}</h6>
       <NavLink style={{marginTop:'auto'}} to={`/detail/${id}`}><DetailButton>Ver más</DetailButton></NavLink>
-      {/* <span>Status: {status}</span>
-      <span>Species: {species}</span>
-      <span>Gender: {gender}</span>
-      <span>Origin:{origin.name}</span> */}
+
     </CardContainer>
   );
 }

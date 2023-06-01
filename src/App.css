@@ -5,10 +5,9 @@ picture{
 }
 
 #logo{
-    width: 100%;
-    min-width: 40px;
+    max-width: 10em;
+    min-width: 1vw;
 }
-
 
 
 input::-webkit-outer-spin-button,

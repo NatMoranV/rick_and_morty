@@ -7,9 +7,9 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.4);
   gap: 16px;
   border-radius: 16px;
   z-index: 1;
@@ -19,13 +19,19 @@ export const CardContainer = styled.div`
   transition: all 0.3s ease;
   text-align: center;
 
+  img{
+      width: 100%;
+  height: auto;
+  border-radius: 50%;
+  }
+
   &:hover {
     .closeButton{
-    display: flex;
+    display: block;
   }
     transform: scale(1.02);
     backdrop-filter: blur(15px);
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
   }
 
 `;
