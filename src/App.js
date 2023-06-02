@@ -8,6 +8,7 @@ import { Form } from "./components/Form/Form";
 import { About } from "./components/About/About";
 import { Detail } from "./components/Detail/Detail";
 import { ThemeProvider } from "styled-components";
+import Favorites  from "./components/Favorites/Favorites";
 
 
 function App() {
@@ -79,13 +80,14 @@ function App() {
           <Nav onSearch={onSearch} logout={logout} />
       
         <Routes>
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           <Route path="/" element={<Form login={login} />} />
           <Route
             path="/home"
             element={<CardsGrid onClose={onClose} characters={characters} />}
           />
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/detail/:id" element={<Detail />} />
         </Routes>
       </div>

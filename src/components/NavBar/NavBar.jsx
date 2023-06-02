@@ -26,6 +26,9 @@ export default function Nav({ onSearch, logout }) {
         <NavLink to="/about">
           <StyledAboutButton>About</StyledAboutButton>
         </NavLink>
+        <NavLink to="/favorites">
+          <StyledAboutButton>Favorites</StyledAboutButton>
+        </NavLink>
           <StyledAboutButton onClick={logout}>Logout</StyledAboutButton>
       </StyledNavContainer>
     </StyledNavBarContainer>
