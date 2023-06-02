@@ -7,7 +7,7 @@ import { StyledNavContainer } from "../NavContainer/StyledNavContainer";
 
 
 
-export default function Nav({ onSearch }) {
+export default function Nav({ onSearch, logout }) {
   const location = useLocation();
   const isHidden = location.pathname === "/";
 
@@ -26,6 +26,7 @@ export default function Nav({ onSearch }) {
         <NavLink to="/about">
           <StyledAboutButton>About</StyledAboutButton>
         </NavLink>
+          <StyledAboutButton onClick={logout}>Logout</StyledAboutButton>
       </StyledNavContainer>
     </StyledNavBarContainer>
   );
